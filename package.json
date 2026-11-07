@@ -1,0 +1,15 @@
+{
+  "name": "wiredraft",
+  "version": "0.1.0",
+  "description": "WireDraft - portable electrical CAD with local AI and MCP",
+  "type": "module",
+  "private": true,
+  "main": "app/server.js",
+  "scripts": {
+    "start": "node app/server.js",
+    "mcp": "node app/server.js --mcp",
+    "test": "node --test tests/core.test.mjs",
+    "build:exe": "node build/build-exe.mjs"
+  },
+  "engines": { "node": ">=22" }
+}

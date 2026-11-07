@@ -1,0 +1,19 @@
+{
+ "id": "p4",
+ "number": "4",
+ "title": "Terminal diagram -X0",
+ "kind": "report",
+ "items": {
+  "syms": [],
+  "wires": [],
+  "texts": [],
+  "lines": [],
+  "rects": []
+ },
+ "report": {
+  "type": "terminal",
+  "auto": true,
+  "part": 0,
+  "strip": "-X0"
+ }
+}

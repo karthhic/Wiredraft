@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>WireDraft</title>
+<link rel="icon" href="/brand/wiredraft.ico">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="bar">
+  <div class="brand"><img src="/brand/wiredraft-mark.png" alt=""><span>WireDraft</span></div>
+  <select id="projSel" data-i18n-title="ui.project"></select>
+  <button id="newProj" data-i18n="ui.new"></button>
+  <button id="projSettings" data-i18n="ui.projectSettings"></button>
+  <span class="sep"></span>
+  <div class="tools" id="tools">
+    <button data-tool="select" data-i18n-title="tool.select" class="on">⬉</button>
+    <button data-tool="wire" data-i18n-title="tool.wire">╱</button>
+    <button data-tool="text" data-i18n-title="tool.text">T</button>
+    <button data-tool="line" data-i18n-title="tool.line">—</button>
+    <button data-tool="rect" data-i18n-title="tool.rect">▭</button>
+  </div>
+  <span class="sep"></span>
+  <button id="back" data-i18n-title="ui.back">←</button>
+  <button id="undo" data-i18n-title="ui.undo">↶</button>
+  <button id="redo" data-i18n-title="ui.redo">↷</button>
+  <button id="rotate" data-i18n-title="ui.rotate">⟳</button>
+  <button id="del" data-i18n-title="ui.delete">🗑</button>
+  <button id="fit" data-i18n-title="ui.fit">⤢</button>
+  <span class="sep"></span>
+  <button id="reports" data-i18n="ui.reports"></button>
+  <div class="menu">
+    <button id="exportBtn" class="primary" data-i18n="ui.export"></button>
+    <div class="menu-list" id="exportMenu" hidden>
+      <button data-export="pdf" data-i18n="export.pdfAll"></button>
+      <button data-export="pdf-page" data-i18n="export.pdfPage"></button>
+      <button data-export="dxf" data-i18n="export.dxf"></button>
+      <button data-export="dwg" data-i18n="export.dwg"></button>
+      <button data-export="svg" data-i18n="export.svg"></button>
+      <hr>
+      <button data-export="wdp" data-i18n="export.projectFile"></button>
+      <label class="as-button"><span data-i18n="export.importFile"></span><input type="file" id="importFile" accept=".json" hidden></label>
+    </div>
+  </div>
+  <span class="grow"></span>
+  <span id="status" class="status"></span>
+  <select id="langSel" data-i18n-title="ui.language"></select>
+</header>
+
+<main>
+  <aside class="left">
+    <nav class="tabs" id="leftTabs">
+      <button data-tab="pages" class="on" data-i18n="tab.pages"></button>
+      <button data-tab="symbols" data-i18n="tab.symbols"></button>
+      <button data-tab="devices" data-i18n="tab.devices"></button>
+      <button data-tab="cables" data-i18n="tab.cables"></button>
+    </nav>
+    <section class="pane" id="pane-pages">
+      <div class="row">
+        <button id="addPage" data-i18n="pages.add"></button>
+        <button id="dupPage" data-i18n-title="pages.duplicate">⧉</button>
+        <button id="upPage" data-i18n-title="pages.up">↑</button>
+        <button id="downPage" data-i18n-title="pages.down">↓</button>
+        <button id="delPage" data-i18n-title="pages.delete">✕</button>
+      </div>
+      <ul id="pageList" class="list"></ul>
+    </section>
+    <section class="pane" id="pane-symbols" hidden>
+      <input id="symSearch" type="search" data-i18n-placeholder="symbols.search"><div class="row"><button id="newSymbol" data-i18n="symedit.new"></button><label class="as-button" data-i18n-title="symedit.importHint"><span data-i18n="symedit.importShort"></span><input type="file" id="importSymbol" accept="image/*" hidden></label><label class="as-button" data-i18n-title="symedit.bgHint"><span data-i18n="symedit.bgShort"></span><input type="file" id="bgSymbol" accept="image/*" hidden></label></div>
+      <div id="symList" class="symlist"></div>
+    </section>
+    <section class="pane" id="pane-devices" hidden>
+      <input id="devSearch" type="search" data-i18n-placeholder="devices.search">
+      <ul id="devList" class="list"></ul>
+    </section>
+    <section class="pane" id="pane-cables" hidden>
+      <div class="row"><button id="addCable" data-i18n="cables.add"></button></div>
+      <div id="cableList"></div>
+    </section>
+  </aside>
+
+  <section class="stage" id="stage">
+    <svg id="sheet" class="wd" xmlns="http://www.w3.org/2000/svg">
+      <style id="sheetStyle"></style>
+      <g id="vp"><rect id="paper" x="0" y="0" width="420" height="297"/><g id="content"></g><g id="overlay"></g></g>
+    </svg>
+    <div id="hint" class="hint"></div>
+    <div id="readonly" class="banner" hidden data-i18n="ui.reportReadonly"></div>
+  </section>
+
+  <aside class="right">
+    <nav class="tabs" id="rightTabs">
+      <button data-tab="props" class="on" data-i18n="tab.properties"></button>
+      <button data-tab="check"><span data-i18n="tab.check"></span> <b id="checkBadge" class="badge"></b></button>
+      <button data-tab="ai" data-i18n="tab.ai"></button>
+    </nav>
+    <section class="pane" id="pane-props"></section>
+    <section class="pane" id="pane-check" hidden><ul id="issues" class="issues"></ul></section>
+    <section class="pane" id="pane-ai" hidden>
+      <div class="row"><label><span data-i18n="ai.model"></span> <select id="modelSel"></select></label></div>
+      <div id="aiStatus" class="muted small"></div>
+      <div id="chatLog" class="chat"></div>
+      <form id="chatForm">
+        <textarea id="chatIn" rows="3" data-i18n-placeholder="ai.placeholder"></textarea>
+        <div class="row">
+          <button type="submit" class="primary" data-i18n="ai.send"></button>
+          <button type="button" id="aiReview" data-i18n="ai.review"></button>
+          <label class="as-button"><span data-i18n="ai.image"></span><input type="file" id="imgIn" accept="image/*" hidden></label>
+        </div>
+      </form>
+    </section>
+  </aside>
+</main>
+
+<dialog id="dlg"><form method="dialog" id="dlgForm"></form></dialog>
+<div id="toast"></div>
+<script type="module" src="/app.js"></script>
+</body>
+</html>

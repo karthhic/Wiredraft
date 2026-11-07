@@ -1,0 +1,18 @@
+{
+ "id": "p6",
+ "number": "6",
+ "title": "Cable list",
+ "kind": "report",
+ "items": {
+  "syms": [],
+  "wires": [],
+  "texts": [],
+  "lines": [],
+  "rects": []
+ },
+ "report": {
+  "type": "cable",
+  "auto": true,
+  "part": 0
+ }
+}

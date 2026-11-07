@@ -1,0 +1,31 @@
+{
+ "format": "wiredraft/1",
+ "rev": 9,
+ "meta": {
+  "title": "Demo panel",
+  "description": "Pump station control panel",
+  "customer": "Example Customer Oy",
+  "company": "WireDraft demo",
+  "address": "Example street 1, Helsinki",
+  "phone": "",
+  "drawingNo": "WD-0001",
+  "paper": "A3",
+  "language": "",
+  "func": "PS1",
+  "loc": "CP",
+  "template": "standard",
+  "date": "2026-10-31",
+  "drawnBy": "WD",
+  "approved": "",
+  "revision": "0",
+  "logo": null
+ },
+ "pageOrder": [
+  "p1",
+  "p2",
+  "p3",
+  "p4",
+  "p5",
+  "p6"
+ ]
+}

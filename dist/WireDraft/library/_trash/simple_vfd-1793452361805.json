@@ -1,0 +1,59 @@
+{
+ "id": "simple_vfd",
+ "name": "Frequency converter",
+ "names": {
+  "fi": "Taajuusmuuttaja"
+ },
+ "cat": "custom",
+ "letter": "T",
+ "pins": [
+  {
+   "id": "1",
+   "x": 0,
+   "y": -8
+  },
+  {
+   "id": "2",
+   "x": 0,
+   "y": 8
+  }
+ ],
+ "prims": [
+  [
+   "r",
+   -6,
+   -4,
+   12,
+   8
+  ],
+  [
+   "l",
+   0,
+   -8,
+   0,
+   -4
+  ],
+  [
+   "l",
+   0,
+   4,
+   0,
+   8
+  ],
+  [
+   "t",
+   0,
+   0.5,
+   "VFD",
+   2,
+   "middle"
+  ]
+ ],
+ "fields": [
+  "rating",
+  "desc",
+  "part"
+ ],
+ "local": [],
+ "show": []
+}

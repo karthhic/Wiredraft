@@ -1,0 +1,10 @@
+{
+  "port": 5178,
+  "language": "en",
+  "paper": "A3",
+  "ollama": "http://127.0.0.1:11434",
+  "portableOllamaPort": 11500,
+  "chatModel": "qwen2.5-coder:7b",
+  "visionModel": "qwen2.5vl:3b",
+  "openWindow": true
+}
