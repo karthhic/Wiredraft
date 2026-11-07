@@ -1,0 +1,13 @@
+{
+ "id": "p1",
+ "number": "1",
+ "title": "Title page",
+ "kind": "cover",
+ "items": {
+  "syms": [],
+  "wires": [],
+  "texts": [],
+  "lines": [],
+  "rects": []
+ }
+}

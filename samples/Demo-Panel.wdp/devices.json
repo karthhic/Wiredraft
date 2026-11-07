@@ -1,0 +1,60 @@
+{
+ "-SUPPLY": {
+  "desc": "400 V 3/N/PE 50 Hz 16 A"
+ },
+ "-X0": {},
+ "-Q1": {
+  "rating": "25 A",
+  "desc": "Main switch"
+ },
+ "-F1": {
+  "rating": "C16A"
+ },
+ "-F2": {
+  "rating": "D10A",
+  "desc": "Control voltage"
+ },
+ "-F6": {
+  "rating": "C10A",
+  "desc": "Service socket"
+ },
+ "-X100": {
+  "rating": "10 A"
+ },
+ "-F8": {
+  "rating": "D10A"
+ },
+ "-G1": {
+  "rating": "5 A",
+  "output": "24 V DC"
+ },
+ "-Q2": {
+  "rating": "4-6.3 A",
+  "setting": "5.5 A",
+  "desc": "Pump motor protection"
+ },
+ "-K1": {
+  "voltage": "24 V DC",
+  "desc": "Pump contactor"
+ },
+ "-X1": {},
+ "-W1": {},
+ "-M1": {
+  "power": "4 kW",
+  "voltage": "400 V",
+  "desc": "Pump"
+ },
+ "-S0": {
+  "desc": "Emergency stop"
+ },
+ "-S1": {
+  "desc": "Stop"
+ },
+ "-S2": {
+  "desc": "Start"
+ },
+ "-H1": {
+  "color": "green",
+  "desc": "Pump running"
+ }
+}

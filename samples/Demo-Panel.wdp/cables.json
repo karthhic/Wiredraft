@@ -1,0 +1,14 @@
+{
+ "-W0": {
+  "type": "5G2,5mm²",
+  "length": "6",
+  "from": "Supply",
+  "to": "-X0"
+ },
+ "-W1": {
+  "type": "4G1,5mm²",
+  "length": "12",
+  "from": "-X1",
+  "to": "-M1"
+ }
+}
