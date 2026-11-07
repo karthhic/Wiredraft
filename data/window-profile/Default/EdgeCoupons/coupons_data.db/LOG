@@ -1,0 +1,5 @@
+2026/11/07-15:56:18.996 5198 Creating DB C:\Users\KARTH\Documents\Wiredraft\Wiredraft\Wiredraft\data\window-profile\Default\EdgeCoupons/coupons_data.db since it was missing.
+2026/11/07-15:56:19.006 5198 Reusing MANIFEST C:\Users\KARTH\Documents\Wiredraft\Wiredraft\Wiredraft\data\window-profile\Default\EdgeCoupons/coupons_data.db/MANIFEST-000001
+2026/11/07-15:56:19.115 1a40 Level-0 table #5: started
+2026/11/07-15:56:19.120 1a40 Level-0 table #5: 683273 bytes OK
+2026/11/07-15:56:19.121 1a40 Delete type=0 #3
