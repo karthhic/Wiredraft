@@ -1,0 +1,23 @@
+{
+ "id": "cabinet_fan",
+ "name": "Cabinet fan",
+ "names": { "fi": "Kaappituuletin" },
+ "cat": "custom",
+ "letter": "M",
+ "pins": [
+  { "id": "L", "x": -4, "y": -8 },
+  { "id": "N", "x": 4, "y": -8 }
+ ],
+ "prims": [
+  ["c", 0, 1, 5],
+  ["l", -4, -8, -4, -2.3],
+  ["l", 4, -8, 4, -2.3],
+  ["a", 0, 1, 2.6, 200, 340],
+  ["a", 0, 1, 2.6, 20, 160],
+  ["c", 0, 1, 0.6, { "fill": true }],
+  ["t", -4.6, -6.4, "L", 1.6, "end"],
+  ["t", 4.6, -6.4, "N", 1.6, "start"]
+ ],
+ "fields": ["power", "voltage", "desc", "part"],
+ "show": ["power"]
+}
